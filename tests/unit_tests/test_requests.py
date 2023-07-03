@@ -23,7 +23,7 @@ async def test_text_requests_wrapper_apost() -> None:
         response = await requests.apost(url, data)
 
         assert response == json.dumps(mock_response_data)
-        mock.assert_called_once_with(url, "GET", headers=None, json=data)
+        mock.assert_called_once_with(url, "POST", headers=None, json=data)
 
 
 @pytest.mark.requires("aioresponses")
